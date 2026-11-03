@@ -111,7 +111,7 @@ python3 scripts/cli.py filter --dry-run --date 20260312
 cat memory/rs_daily_stats_20260312.json
 
 # 看最近 issue（需代理）
-curl -s "https://api.github.com/repos/thinson/RS-PaperClaw/issues?state=all&per_page=10" | python3 -c "import sys,json;d=json.load(sys.stdin);[print(f'#{x[\"number\"]}: {x[\"title\"]}') for x in d]"
+curl -s "https://api.github.com/repos/123trump/RS-PaperClaw/issues?state=all&per_page=10" | python3 -c "import sys,json;d=json.load(sys.stdin);[print(f'#{x[\"number\"]}: {x[\"title\"]}') for x in d]"
 ```
 
 ### 缺失和空日报恢复

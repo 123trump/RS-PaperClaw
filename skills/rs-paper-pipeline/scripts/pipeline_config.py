@@ -124,7 +124,7 @@ class PipelineConfig:
 
 
 def load_config() -> PipelineConfig:
-    github_repo = _env("RS_GITHUB_REPO", "thinson/RS-PaperClaw")
+    github_repo = _env("RS_GITHUB_REPO", "123trump/RS-PaperClaw")
     temp_dir = Path(_env("RS_TEMP_DIR", "/tmp")).expanduser()
     root_dir, workspace_warning = resolve_workspace_root()
     return PipelineConfig(

@@ -8,7 +8,7 @@
 [![Python](https://img.shields.io/badge/Python-3.10%2B-3776AB?logo=python&logoColor=white)](#)
 [![Status](https://img.shields.io/badge/Status-Active-2EA043)](#)
 [![Workflow](https://img.shields.io/badge/Workflow-arXiv%20%E2%86%92%20Issue%20%E2%86%92%20Digest-8A2BE2)](#)
-[![Pages](https://img.shields.io/badge/GitHub%20Pages-Live-b55f34)](https://thinson.github.io/RS-PaperClaw/)
+[![Pages](https://img.shields.io/badge/GitHub%20Pages-Live-b55f34)](https://123trump.github.io/RS-PaperClaw/)
 
 **arXiv → Per-paper Issue Report → Daily Digest → Visual Reading Portal**
 
@@ -20,8 +20,8 @@
 
 ## 🌐 Live Portal
 
-- GitHub Pages: **https://thinson.github.io/RS-PaperClaw/**
-- CVPR 2026 GeoAI Collection: **https://thinson.github.io/RS-PaperClaw/cvpr2026_geoai.html**
+- GitHub Pages: **https://123trump.github.io/RS-PaperClaw/**
+- CVPR 2026 GeoAI Collection: **https://123trump.github.io/RS-PaperClaw/cvpr2026_geoai.html**
 - Digest archive: **[daily_reports/](./daily_reports/README.md)**
 
 ## 🖼️ UI Preview
@@ -115,12 +115,12 @@ The repo contains many paper preview images (400MB+). To skip them:
 
 ```bash
 # Lightweight clone (skips papers/previews/, ~1MB)
-git clone --filter=blob:none --sparse https://github.com/thinson/RS-PaperClaw.git
+git clone --filter=blob:none --sparse https://github.com/123trump/RS-PaperClaw.git
 cd RS-PaperClaw
 git sparse-checkout set --no-cone '/*' '!papers/previews'
 
 # Full clone (includes all preview images, ~400MB)
-git clone https://github.com/thinson/RS-PaperClaw.git
+git clone https://github.com/123trump/RS-PaperClaw.git
 ```
 
 ### 1) Bootstrap
@@ -143,7 +143,9 @@ Optional:
 - `LLM_API_URL` (default: `https://api.deepseek.com/chat/completions`; supports other OpenAI-like Chat Completions-compatible endpoints)
 - `DINGTALK_WEBHOOK`
 - `FEISHU_TARGET`
-- `RS_GITHUB_REPO`
+- `RS_GITHUB_REPO` (local default: `123trump/RS-PaperClaw`; GitHub Actions uses the current repository when the repository variable is unset)
+
+For an existing `.env` or Actions repository variable, change any old `RS_GITHUB_REPO` value to `123trump/RS-PaperClaw`, or remove the override to use the default.
 
 ### 3) Run today's workflow
 
@@ -201,4 +203,4 @@ Both workflows execute `skills/rs-paper-pipeline/scripts/cli.py` and read the fi
 
 ## ⭐ Star History
 
-[![Star History Chart](https://api.star-history.com/svg?repos=thinson/RS-PaperClaw&type=Date)](https://star-history.com/#thinson/RS-PaperClaw&Date)
+[![Star History Chart](https://api.star-history.com/svg?repos=123trump/RS-PaperClaw&type=Date)](https://star-history.com/#123trump/RS-PaperClaw&Date)

@@ -158,7 +158,7 @@
 ### 5.2 常用可选项
 
 - `RS_GITHUB_REPO`
-  目标仓库，默认是 `thinson/RS-PaperClaw`
+  目标仓库，默认是 `123trump/RS-PaperClaw`
 - `LLM_MODEL`
   使用的模型名
 - `LLM_API_URL`

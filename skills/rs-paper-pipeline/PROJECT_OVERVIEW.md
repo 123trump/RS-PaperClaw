@@ -127,7 +127,7 @@ Python 依赖可通过 `python3 -m pip install -r requirements.txt` 安装。
 
 脚本里还依赖若干外部资源：
 
-- GitHub 仓库：`thinson/RS-PaperClaw`
+- GitHub 仓库：`123trump/RS-PaperClaw`
 - 百炼兼容接口
 - OpenClaw CLI（用于通知）
 

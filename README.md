@@ -8,7 +8,7 @@
 [![Python](https://img.shields.io/badge/Python-3.10%2B-3776AB?logo=python&logoColor=white)](#)
 [![Status](https://img.shields.io/badge/Status-Active-2EA043)](#)
 [![Workflow](https://img.shields.io/badge/Workflow-arXiv%20%E2%86%92%20Issue%20%E2%86%92%20Digest-8A2BE2)](#)
-[![Pages](https://img.shields.io/badge/GitHub%20Pages-Live-b55f34)](https://thinson.github.io/RS-PaperClaw/)
+[![Pages](https://img.shields.io/badge/GitHub%20Pages-Live-b55f34)](https://123trump.github.io/RS-PaperClaw/)
 
 **arXiv → 单篇报告 Issue → 每日汇总日报 → 可视化阅读页面**
 
@@ -116,12 +116,12 @@ RS-PaperClaw/
 
 ```bash
 # 轻量克隆（跳过 papers/previews/ 图片，约 1MB）
-git clone --filter=blob:none --sparse https://github.com/thinson/RS-PaperClaw.git
+git clone --filter=blob:none --sparse https://github.com/123trump/RS-PaperClaw.git
 cd RS-PaperClaw
 git sparse-checkout set --no-cone '/*' '!papers/previews'
 
 # 完整克隆（含全部预览图，约 400MB）
-git clone https://github.com/thinson/RS-PaperClaw.git
+git clone https://github.com/123trump/RS-PaperClaw.git
 ```
 
 ### 1) 初始化
@@ -144,7 +144,9 @@ cd skills/rs-paper-pipeline
 - `LLM_API_URL`（默认：`https://api.deepseek.com/chat/completions`；支持其他 OpenAI-like Chat Completions 兼容接口）
 - `DINGTALK_WEBHOOK`
 - `FEISHU_TARGET`
-- `RS_GITHUB_REPO`
+- `RS_GITHUB_REPO`（本地默认：`123trump/RS-PaperClaw`；GitHub Actions 未设置同名仓库变量时使用当前仓库）
+
+如果已有 `.env` 或 Actions 仓库变量，请检查 `RS_GITHUB_REPO`，将旧仓库地址改为 `123trump/RS-PaperClaw`，或移除该覆盖项以使用默认值。
 
 ### 3) 运行当天流程
 
@@ -215,10 +217,4 @@ python3 scripts/cli.py reconcile --date 20260317 --dry-run
 
 ## ⭐ Star History
 
-<a href="https://www.star-history.com/?type=date&repos=thinson%2FRS-PaperClaw">
- <picture>
-   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/chart?repos=thinson/RS-PaperClaw&type=date&theme=dark&legend=top-left&sealed_token=0MxBU6_td-V1EzNAbnCRYKVXLAqwKtr5RKH-HgXo8QT7XJDEMeAc-yb7ISDKomfsK5rPEYmPuDywBcC-02-GKFvrThXHHdsXhPEmrVhNkpYX5fFLAwHt7HdecdjruzRiKUL6uxUeds8qm09ZJHCCO3m30-7zp7YBPnTTM0BzAvZwHG1tnFaXxtF3L5ns" />
-   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/chart?repos=thinson/RS-PaperClaw&type=date&legend=top-left&sealed_token=0MxBU6_td-V1EzNAbnCRYKVXLAqwKtr5RKH-HgXo8QT7XJDEMeAc-yb7ISDKomfsK5rPEYmPuDywBcC-02-GKFvrThXHHdsXhPEmrVhNkpYX5fFLAwHt7HdecdjruzRiKUL6uxUeds8qm09ZJHCCO3m30-7zp7YBPnTTM0BzAvZwHG1tnFaXxtF3L5ns" />
-   <img alt="Star History Chart" src="https://api.star-history.com/chart?repos=thinson/RS-PaperClaw&type=date&legend=top-left&sealed_token=0MxBU6_td-V1EzNAbnCRYKVXLAqwKtr5RKH-HgXo8QT7XJDEMeAc-yb7ISDKomfsK5rPEYmPuDywBcC-02-GKFvrThXHHdsXhPEmrVhNkpYX5fFLAwHt7HdecdjruzRiKUL6uxUeds8qm09ZJHCCO3m30-7zp7YBPnTTM0BzAvZwHG1tnFaXxtF3L5ns" />
- </picture>
-</a>
+[![Star History Chart](https://api.star-history.com/svg?repos=123trump/RS-PaperClaw&type=Date)](https://star-history.com/#123trump/RS-PaperClaw&Date)
