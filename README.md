@@ -20,11 +20,11 @@ English version: **[README_EN.md](./README_EN.md)**
 
 ## 🌐 在线阅读入口
 
--- 项目主页（GitHub Pages）：**https://thinson.github.io/RS-PaperClaw/**<\b>
--- CVPR 2026 GeoAI 合集：**https://thinson.github.io/RS-PaperClaw/cvpr2026_geoai.html**<\b>
--- 日报归档目录：**[daily_reports/](./daily_reports/README.md)**<\b>
-+- 项目主页（GitHub Pages）：**https://123trump.github.io/RS-PaperClaw/**<\b>
-+- 日报归档目录：**[daily_reports/](./daily_reports/README.md)**<\b>
+-- 项目主页（GitHub Pages）：**https://thinson.github.io/RS-PaperClaw/**
+-- CVPR 2026 GeoAI 合集：**https://thinson.github.io/RS-PaperClaw/cvpr2026_geoai.html**
+-- 日报归档目录：**[daily_reports/](./daily_reports/README.md)**
++- 项目主页（GitHub Pages）：**https://123trump.github.io/RS-PaperClaw/**
++- 日报归档目录：**[daily_reports/](./daily_reports/README.md)**
 
 ## 🖼️ 界面预览
 
