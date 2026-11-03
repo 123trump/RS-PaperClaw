@@ -6,13 +6,15 @@
     "earth observation",
     "hyperspectral",
     "multispectral",
-    "synthetic aperture radar",
-    "SAR",
     "UAV",
     "geolocalization",
     "change detection",
     "land cover",
-    "AlphaEarth"
+    "AlphaEarth",
+    "weakly-supervised semantic segmentation",
+    "weakly supervised semantic segmentation",
+    "satellite image time series",
+    "satellite imagery time series"
   ],
   "rs_signal_patterns": [
     "(?i)\\bremote sensing\\b",
@@ -21,13 +23,14 @@
     "(?i)\\bearth observation\\b",
     "(?i)\\bhyperspectral\\b",
     "(?i)\\bmultispectral\\b",
-    "(?i)\\bsynthetic aperture radar\\b",
     "\\bSAR\\b",
     "\\bUAV\\b",
     "(?i)\\bgeolocalization\\b",
     "(?i)\\bchange detection\\b",
     "(?i)\\bland cover\\b",
-    "(?i)\\balphaearth\\b"
+    "(?i)\\balphaearth\\b",
+    "(?i)\\bsatellite\\b",
+    "(?i)\\bgeostationary\\b",
   ],
   "ai_signal_patterns": [
     "(?i)\\bfoundation model(s)?\\b",
