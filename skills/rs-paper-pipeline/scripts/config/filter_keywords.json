@@ -30,7 +30,7 @@
     "(?i)\\bland cover\\b",
     "(?i)\\balphaearth\\b",
     "(?i)\\bsatellite\\b",
-    "(?i)\\bgeostationary\\b",
+    "(?i)\\bgeostationary\\b"
   ],
   "ai_signal_patterns": [
     "(?i)\\bfoundation model(s)?\\b",
