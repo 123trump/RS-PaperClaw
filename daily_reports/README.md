@@ -2,6 +2,43 @@
 
 最近三天日报（最新在前）：
 
+# [20261103](./202611/20261103.md)
+## 📌 今日概况
+
+今日共检索候选论文 23 篇；关键词+LLM 智能匹配遥感交叉论文 6 篇；最终纳入日报 6 篇。
+
+今日研究呈现多模态融合与任务专用化趋势。遥感问答引入图推理增强时空约束理解；在线高精地图构建利用卫星先验提升鲁棒性；土地覆盖与光伏制图分别探索时序机器学习与免训练视觉基础模型；洪水预测融合地球观测嵌入与气象强迫；热带作物分割发布新基准。整体体现从通用模型向领域适配与数据高效方向演进。
+
+## ✨ 今日亮点
+
+- 遥感问答采用观测支持图推理，强化时空关系与关系条件定位。
+- 在线高精地图构建重铸卫星先验，提升传感器冗余下的鲁棒性。
+- 免训练光伏制图与热带作物分割基准，推动数据高效与区域适配。
+
+## 🗂 今日文章列表
+
+| 标题 | 作者 | 单位 | 一句话概括 | Issue |
+|---|---|---|---|---|
+| [20261103] OSGR: Observation-Support Graph Reasoning for Earth Observation Question Answering | Yu Dazhou, Wang Zerong, Bao Riyang, Li Longxiang, Liu Yang, Zhao Liang | Emory University；Georgia State University | 提出观测支持图推理框架，用于地球观测问答中的时空约束与关系条件定位。 | [#36](https://github.com/123trump/RS-PaperClaw/issues/36) |
+| [20261103] ReSMap: Recasting Satellite Priors for Robust and Accurate Online HD Map Construction | Kim Kyungmin, Lee Sumin, Jeong Sungoh, Lim DoHyun, Park Seonghyun, Hwang Soonmin | Department of Automotive Engineering (Automotive-Computer Convergence)；Department of Computer Science；Department of Electrical Engineering；Department of Automotive Engineering；Hanyang University, Seoul, South Korea | 将卫星先验重铸为在线高精地图构建的鲁棒融合线索，提升感知冗余与精度。 | [#37](https://github.com/123trump/RS-PaperClaw/issues/37) |
+| [20261103] Using GeoAI and machine learning tools for consistent high-resolution land cover mapping based on time-series NAIP imagery | Liu Jie, Tang Xusheng, Wang Chao, Yan Zhengxiao, Dai Yuchen, Zhang Qi, Song Conghe | Department of Geography and Environment, University；Department of City and Regional Planning, University；Department of Geography, Hong Kong Baptist University；Department of Earth, Marine and Environmental Sciences；University of North Carolina at Chapel Hill, Chapel Hill | 结合GeoAI与机器学习，基于时序NAIP影像实现一致的高分辨率土地覆盖制图。 | [#38](https://github.com/123trump/RS-PaperClaw/issues/38) |
+| [20261103] High-fidelity training-free photovoltaic module mapping from multi-view UAV imagery | Duana WenHao, Chena Qi, Zhang Penglei, Deng Ruizhe, Guo Zhiling, Zhang Haoran, Chen Yuntian | School of Geography and Information Engineering, China University of Geosciences；Ningbo Institute of Digital Twin, Eastern Institute of；Zhejiang Key Laboratory of Industrial Intelligence and Digital Twin, Eastern Institute of；Department of Building Environment and Energy Engineering, The Hong Kong；Polytechnic University, Kowloon, Hong Kong, China；School of Urban Planning and Design, Peking University, Shenzhen, 518055, China | 利用多视角无人机影像与视觉基础模型，实现免训练的高保真光伏组件制图。 | [#39](https://github.com/123trump/RS-PaperClaw/issues/39) |
+| [20261103] Fusing Earth observation embeddings and spaceborne terrain with meteorological forcing for flood peak depth prediction from high-water marks | Zhou Wen, Wang Shaowen, Lall Upmanu, Merwade Venkatesh, Ye Dingqi | Department of Geography and Geographic Information Science；CyberGIS Center for Advanced Digital and Spatial Studies, and；Siebel School of Computing and Data Science；University of Illinois Urbana--Champaign, Urbana, IL, USA；School of Complex Adaptive Systems, College of Global Futures；Arizona State University, Tempe, AZ, USA；Lyles School of Civil and Construction Engineering；Purdue University, West Lafayette, IN, USA | 融合地球观测嵌入、星载地形与气象强迫，由高水位标记预测洪峰深度。 | [#40](https://github.com/123trump/RS-PaperClaw/issues/40) |
+| [20261103] PLANTEUR: A Crop-Type Segmentation Benchmark for Tropical Regions | Wolters Piper, Tseng Gabriel, Bastani Favyen, Redmon Joseph, Zhang Yawen, Sablon Hadrien, Shah Ando | Allen Institute for AI | 发布PLANTEUR基准，面向热带地区基于Sentinel-2的作物类型分割评估。 | [#41](https://github.com/123trump/RS-PaperClaw/issues/41) |
+
+## 🔎 观察
+
+- 遥感任务正从通用大模型转向领域专用推理与融合，图推理和卫星先验成为提升鲁棒性的关键。
+- 免训练框架与区域基准并行发展，反映对数据高效和热带等欠代表区域适配的迫切需求。
+
+---
+
+Powered by OpenClaw🦞
+
+<!-- rs-pipeline: {"date": "20261103", "source": "oai", "checked_at": "2026-11-04T07:41:45+00:00", "source_complete": true, "candidate_count": 23, "paper_count": 6} -->
+
+---
+
 # [20261102](./202611/20261102.md)
 ## 📌 今日概况
 
@@ -74,44 +111,5 @@ Powered by OpenClaw🦞
 Powered by OpenClaw🦞
 
 <!-- rs-pipeline: {"date": "20261101", "source": "oai", "checked_at": "2026-11-04T07:32:53+00:00", "source_complete": true, "candidate_count": 10, "paper_count": 3} -->
-
----
-
-# [20261031](./202610/20261031.md)
-## 📌 今日概况
-
-今日共检索候选论文 18 篇；关键词+LLM 智能匹配遥感交叉论文 8 篇；最终纳入日报 8 篇。
-
-今日研究呈现多源遥感数据与AI方法深度融合的趋势，涵盖高光谱、UAV、微波及地球嵌入等数据形式。不确定性量化与采样偏差评估成为提升模型可靠性的关键方向，同时跨视角推理、边缘-云-太空协同推理及城市功能知识迁移拓展了遥感应用边界。数据集构建与基准评估并重，强调实际部署中的性能差距与数据不均问题。
-
-## ✨ 今日亮点
-
-- 高光谱场景预算受限检查引入空间不确定性分析，提升主动学习效率。
-- MASSIMAL数据集提供UAV高光谱与地面真值，支撑海岸栖息地制图。
-- 作物制图评估揭示采样偏差导致的部署性能差距，提出预测驱动推断。
-
-## 🗂 今日文章列表
-
-| 标题 | 作者 | 单位 | 一句话概括 | Issue |
-|---|---|---|---|---|
-| [20261031] Spatial Uncertainty Analytics for Budget-Limited Inspection of Hyperspectral Scenes | Sharma Ritesh, Motai Yuichi | RITESH SHARMA, Virginia Commonwealth University, USA；YUICHI MOTAI, Virginia Commonwealth University, USA；Authors’ Contact Information: Ritesh Sharma, Virginia Commonwealth University, Richmond, Virginia, USA | 提出空间不确定性分析方法，用于高光谱场景预算受限检查中的主动学习采样。 | [#12](https://github.com/123trump/RS-PaperClaw/issues/12) |
-| [20261031] The MASSIMAL Dataset: UAV Hyperspectral Images and Ground Truth Observations for Coastal Habitat Mapping in Norway | Martin Hansen Skjelvareid, Rinde Eli, Hancke Kasper, Blix Katalin, Galice Guillaume Hoarau, Grometto Nicolo, Maia Røst Kile | ¹ UiT The Arctic University of Norway, Hansine Hansens veg 18；² Norwegian Institute for Water Research (NIVA), Sognsveien 72；³ Nord University, Universitetsalléen 11 | 发布MASSIMAL数据集，包含挪威海岸UAV高光谱影像与地面观测，用于栖息地制图。 | [#13](https://github.com/123trump/RS-PaperClaw/issues/13) |
-| [20261031] Crop Mapping Evaluation under Sampling Bias | Zaytar Akram, Ochwang'i Kemunto, Robinson Caleb, Girmaw A. Tadesse, Gilles Q. Hacheme, Dodhia Rahul, Becker-Reshef Inbal, Juan M. Lavista Ferres | Microsoft AI for Good Research Lab；Microsoft Research | 评估采样偏差下作物制图性能，利用预测驱动推断缩小部署性能差距。 | [#14](https://github.com/123trump/RS-PaperClaw/issues/14) |
-| [20261031] An all-weather microwave-based AI retrieval of pan-Arctic melt pond fraction | Aparício Sara, Driscoll Simon, Mark R. Drinkwater, Flocco Daniela | CENSE - Center for Environmental and Sustainability Research & CHANGE - Global Change and；Sustainability Institute, NOVA School of Science and Technology, Universidade Nova de Lisboa, Campus de；Department of Applied Mathematics and Theoretical Physics, University of Cambridge, United Kingdom；Dipartimento di Scienze della Terra, dell’Ambiente e delle Risorse, Università degli Studi di Napoli “Federico；CoNISMA - Consorzio Nazionale Interuniversitario per le Scienze del Mare, Roma, Italy | 基于微波遥感和XGBoost实现全天候泛北极融化池比例AI反演。 | [#15](https://github.com/123trump/RS-PaperClaw/issues/15) |
-| [20261031] Adaptive Land Units from Earth Embeddings | Alonso Albert, Jamal Jokar Arsanjani, Andres R. Masegosa | Department of Computer Science, Aalborg University, Copenhagen, Denmark；Department of Sustainability and Planning, Aalborg University, Copenhagen, Denmark | 利用地球嵌入和贝叶斯层次聚类构建自适应土地单元，支持无监督土地利用建模。 | [#16](https://github.com/123trump/RS-PaperClaw/issues/16) |
-| [20261031] Grounding Across Views: Cross-View Referring Reasoning for Visual Grounding | Gan Hao, Wang Liuqian, Li Shuang, Gao Yufei, Chao Wentao, Fu Chong, Liu Chengming, Shi Lei | Zhengzhou University, Henan, China | 提出跨视角指代推理方法，实现视觉 grounding 中的对象地理定位与视角感知推理。 | [#17](https://github.com/123trump/RS-PaperClaw/issues/17) |
-| [20261031] STLT: A Novel System for Energy-Aware Distributed Inference in the Edge-Cloud-Space Continuum | Stanisic Andrija, Gravara Milos, Juan Luis Herrera, Nastic Stefan | University of Extremadura Spain | 设计STLT系统，在边缘-云-太空连续体中实现能耗感知的分布式DNN推理。 | [#18](https://github.com/123trump/RS-PaperClaw/issues/18) |
-| [20261031] Urban functional knowledge transfer through global representations amid uneven data | Liu Junyuan, Wang Xinglei, Dong Guangsheng, Sha Hao, Zeng Zichao, Deng Zhicheng, Feng Jiazhuang, Wang Xiang, Cheng Tao | SpaceTimeLab, Department of Civil, Environmental and Geomatic Engineering, University；College London, London, WC1 E 6 BT, United Kingdom；State Key Laboratory of Information Engineering in Surveying, Mapping and Remote；Sensing, Wuhan University, Wuhan, 430079, China | 通过全局表示和POI对齐嵌入，在数据不均条件下实现城市功能知识迁移。 | [#19](https://github.com/123trump/RS-PaperClaw/issues/19) |
-
-## 🔎 观察
-
-- 不确定性量化与采样偏差评估正从辅助分析转变为核心建模环节，反映遥感AI对可靠性的迫切需求。
-- 跨域知识迁移与分布式推理架构并行发展，表明遥感应用正同时向数据高效利用和计算资源协同优化演进。
-
----
-
-Powered by OpenClaw🦞
-
-<!-- rs-pipeline: {"date": "20261031", "source": "oai", "checked_at": "2026-11-04T07:27:27+00:00", "source_complete": true, "candidate_count": 18, "paper_count": 8} -->
 
 ---
