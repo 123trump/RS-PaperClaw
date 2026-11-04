@@ -18,6 +18,31 @@ from services.paper_analysis import (
 
 
 class InstitutionValidationTest(unittest.TestCase):
+    def test_saint_abbreviation_does_not_look_like_body_prose(self):
+        institution = "AIML Lab, School of Computer Science, University of St. Gallen"
+        self.assertTrue(is_valid_institution_text(institution))
+        self.assertFalse(is_invalid_digest_institution(institution))
+        self.assertFalse(is_valid_institution_text(institution + ". Satellite data are processed here."))
+        self.assertFalse(is_valid_institution_text("University of Somewhere. Additional text follows."))
+
+    def test_extracts_st_gallen_from_ieee_author_block(self):
+        from unittest.mock import patch
+        institution = "AIML Lab, School of Computer Science, University of St. Gallen"
+        tex = r"""
+        \author{
+            \IEEEauthorblockN{Rico Staedeli, Lorena Raichle}
+            \IEEEauthorblockA{AIML Lab, School of Computer Science, University of St. Gallen}
+        }
+        """
+        with tempfile.TemporaryDirectory() as directory:
+            source = Path(directory) / "paper.tex"
+            source.write_text(tex, encoding="utf-8")
+            self.assertEqual(extract_institutions_from_latex_source(source), institution)
+        with patch("services.paper_analysis.call_llm") as llm:
+            self.assertEqual(extract_institutions_from_first_page(
+                "DAC-Loop", "Rico Staedeli", institution), institution)
+            llm.assert_not_called()
+
     def test_ministry_of_natural_resources_is_an_institution(self):
         self.assertTrue(is_valid_institution_text("First Institute of Oceanography, Ministry of Natural Resources"))
         self.assertFalse(is_valid_institution_text("University of Somewhere computational resources"))

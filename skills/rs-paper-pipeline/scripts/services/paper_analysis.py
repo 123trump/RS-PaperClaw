@@ -232,7 +232,10 @@ def is_valid_institution_text(text: str) -> bool:
             return False
         if domain_prose_pattern.search(part) and not INSTITUTION_KEYWORD_PATTERN.search(part):
             return False
-        if re.search(r"\.\s+[A-Z][a-z]+", part):
+        # "St. Gallen" and "St. Louis" contain an abbreviation, not a
+        # sentence boundary. Preserve the original affiliation for reports.
+        sentence_check = re.sub(r"\bSt\.(?=\s+[A-Z][a-z])", "St", part)
+        if re.search(r"\.\s+[A-Z][a-z]+", sentence_check):
             return False
     return True
 
