@@ -35,7 +35,17 @@ class ArxivClientTest(unittest.TestCase):
         with patch.dict("os.environ", {"ARXIV_SOURCE": "oai"}):
             items = arxiv_client.fetch_recent_candidates(target_date=target)
         self.assertEqual([item["arxiv_id"] for item in items], ["2611.00001v1"])
+        self.assertEqual(items.metadata_source, "api")
         self.assertIn(f"submittedDate:[{target}0000 TO {target}2359]", fetch.call_args.args[0]["search_query"])
+
+    @patch.object(arxiv_client, "fetch_query_with_fallback")
+    @patch("clients.arxiv_oai.harvest_since", return_value=[])
+    def test_empty_successful_harvest_keeps_oai_source(self, harvest, fetch):
+        with patch.dict("os.environ", {"ARXIV_SOURCE": "oai"}):
+            items = arxiv_client.fetch_recent_candidates(target_date=datetime.now().strftime("%Y%m%d"))
+        self.assertEqual(items, [])
+        self.assertEqual(items.metadata_source, "oai")
+        fetch.assert_not_called()
 
     @patch.object(arxiv_client, "fetch_query_with_fallback")
     @patch("clients.arxiv_oai.harvest_since")

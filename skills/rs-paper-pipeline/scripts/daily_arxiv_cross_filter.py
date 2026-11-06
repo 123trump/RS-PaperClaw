@@ -183,10 +183,10 @@ def main(dry_run=False, days_back=2, stats_out: str | None = None, target_date: 
 
     stats = {
         "date": target_date or datetime.now().strftime("%Y%m%d"),
-        "metadata_source": (
+        "metadata_source": getattr(cands, "metadata_source", (
             "api" if target_date and (datetime.now().date() - datetime.strptime(target_date, "%Y%m%d").date()).days > 14
             else os.environ.get("ARXIV_SOURCE", "api")
-        ),
+        )),
         "source_complete": True,
         "source_checked_at": datetime.now(timezone.utc).isoformat(timespec="seconds"),
         "candidate_count": cand_count,

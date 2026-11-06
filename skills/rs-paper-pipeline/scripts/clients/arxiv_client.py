@@ -32,6 +32,14 @@ class ArxivUnavailableError(RuntimeError):
     """Upstream fetch exhausted its retries; callers must not retry whole batches."""
 
 
+class CandidateList(list):
+    """List-compatible candidates carrying the source actually used, even if empty."""
+
+    def __init__(self, items, metadata_source):
+        super().__init__(items)
+        self.metadata_source = metadata_source
+
+
 def has_remote_sensing_signal(text: str) -> bool:
     return any(pattern.search(text) for pattern in RS_MATCH_PATTERNS)
 
@@ -196,7 +204,9 @@ def fetch_recent_candidates(
             days = {datetime.now().date() - timedelta(days=i) for i in range(days_back)}
         try:
             items = harvest_since(min(days).isoformat(), has_remote_sensing_signal)
-            return [item for item in items if item["published"] in {day.isoformat() for day in days}]
+            return CandidateList(
+                [item for item in items if item["published"] in {day.isoformat() for day in days}], "oai"
+            )
         except OaiTransportError as exc:
             # Retry through the official query API only after transport failure.
             # Rate limits and malformed/incomplete harvests remain hard failures.
@@ -295,9 +305,9 @@ def fetch_recent_candidates(
 
     if target_date:
         scoped_query = f"({base_query}) AND submittedDate:[{target_date}0000 TO {target_date}2359]"
-        return run_query(scoped_query, max_scan=max_results, page_size=min(max_results, 100))
+        return CandidateList(run_query(scoped_query, max_scan=max_results, page_size=min(max_results, 100)), "api")
 
-    return run_query(base_query, max_scan=3000, page_size=min(max_results, 100 if target_date else 200))
+    return CandidateList(run_query(base_query, max_scan=3000, page_size=min(max_results, 100 if target_date else 200)), "api")
 
 
 def download_pdf(arxiv_id: str) -> tuple[Path | None, bool]:
