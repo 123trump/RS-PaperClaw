@@ -2,6 +2,43 @@
 
 最近三天日报（最新在前）：
 
+# [20261105](./202611/20261105.md)
+## 📌 今日概况
+
+今日共检索候选论文 14 篇；关键词+LLM 智能匹配遥感交叉论文 6 篇；最终纳入日报 6 篇。
+
+今日研究覆盖天气系统检测、树种组成制图、开放词汇分割、地基模型基准、跨视角三维重建与空间物理边界检测。趋势上，多模态数据融合与基础模型适配成为主流，如结合卫星与再分析数据、航空影像与激光扫描；同时，针对高分辨率影像的基准评测与开放词汇分割数据集建设受到关注，显示社区对模型泛化与可迁移性的重视。
+
+## ✨ 今日亮点
+
+- 再分析数据对卫星天气锋检测的增益被系统评估，强调多源融合价值。
+- 瑞士全国树种组成制图融合高分辨率航空影像与多模态数据，展示大尺度应用。
+- TerraMesh-Masks发布开放词汇分割基准，推动对地观测分割的泛化评测。
+
+## 🗂 今日文章列表
+
+| 标题 | 作者 | 单位 | 一句话概括 | Issue |
+|---|---|---|---|---|
+| [20261105] Detecting Weather Fronts from Satellite Observations: What Does Reanalysis Add? | Dravilas Ioannis, Stoicescu Miruna, Tervo Roope, Horn Carlos, Oriol Hinojo Comellas, Montazeri Sina, Meraner Andrea, Lucic Ana | University of Amsterdam | 对比卫星观测与再分析数据在天气锋检测中的表现，量化再分析信息的附加价值。 | [#51](https://github.com/123trump/RS-PaperClaw/issues/51) |
+| [20261105] National-scale mapping of tree species composition in Switzerland from high-resolution aerial imagery and multimodal data | Zhou Yixin, Ferrari Luca, Verena C. Griess, Rehush Nataliia, Schindler Konrad, Beloiu Mirela | ETH Swiss Geo Lab；Ecosystem Ecology Group, Swiss Federal Research Institute WSL | 利用高分辨率航空影像与多模态数据实现瑞士全国树种组成制图。 | [#52](https://github.com/123trump/RS-PaperClaw/issues/52) |
+| [20261105] TerraMesh-Masks: Open-Vocabulary Segmentation for Earth Observation | Blumenstiel Benedikt, Devimeux Hugues, Jakubik Johannes, Schindler Konrad | IBM Research | 提出TerraMesh-Masks开放词汇分割数据集与基准，面向对地观测场景。 | [#53](https://github.com/123trump/RS-PaperClaw/issues/53) |
+| [20261105] When GeoFMs Meet VHR: Benchmarking Foundation Models on Very High Resolution Earth Observation Imagery | Kshitij Raj Sharma, Adorni Pierre, Pham Minh-Tan, Tiede Dirk, Lefèvre Sébastien | Universit\'e Bretagne Sud, IRISA, France；University of Salzburg, Department of Geoinformatics, Austria；UiT The Arctic University of Norway, Troms, Norway | 系统评测地理空间基础模型在甚高分辨率对地观测影像上的迁移性能。 | [#54](https://github.com/123trump/RS-PaperClaw/issues/54) |
+| [20261105] Georeferenced Cross-View 3D Reconstruction from Ground and Satellite Images | David G. Shatwell, Shah Mubarak | Institute of Artificial Intelligence, University of Central Florida；only the local scene geometry, but also localizing every camera center and 3 D | 融合地面与卫星影像实现带地理参考的跨视角三维重建与相机定位。 | [#55](https://github.com/123trump/RS-PaperClaw/issues/55) |
+| [20261105] MP-DualNet: A Dual-Branch Deep Learning Approach for Magnetopause Boundary Detection Using Simulated SXI Images | Zhong Cheng, Yang Zhongwei, Sun Tianran, Huang Chengyan, Liu Jiajia, Guo Jingnan, Wang Yuming, Wang Chi | National Key Laboratory of Deep Space Exploration/School of Earth and Space Sciences, University of；State Key Laboratory of Solar Activity and Space Weather, National Space Science Center, Chinese；Academy of Sciences, Beijing 100190, China；CAS Center for Excellence in Comparative Planetology/CAS Key Laboratory of Geospace；Environment/Mengcheng National Geophysical Observatory, University of Science and Technology of | 设计双分支网络从模拟SXI图像中检测磁层顶边界，服务空间天气监测。 | [#56](https://github.com/123trump/RS-PaperClaw/issues/56) |
+
+## 🔎 观察
+
+- 基础模型评测从通用场景转向甚高分辨率对地观测，暴露出预训练迁移在细节任务上的适配需求。
+- 多模态融合成为提升遥感任务精度的共性路径，但数据对齐与模态缺失鲁棒性仍是待解问题。
+
+---
+
+Powered by OpenClaw🦞
+
+<!-- rs-pipeline: {"date": "20261105", "source": "oai", "checked_at": "2026-11-06T12:50:09+00:00", "source_complete": true, "candidate_count": 14, "paper_count": 6} -->
+
+---
+
 # [20261104](./202611/20261104.md)
 ## 📌 今日概况
 
@@ -66,46 +103,5 @@ Powered by OpenClaw🦞
 Powered by OpenClaw🦞
 
 <!-- rs-pipeline: {"date": "20261103", "source": "oai", "checked_at": "2026-11-04T07:41:45+00:00", "source_complete": true, "candidate_count": 23, "paper_count": 6} -->
-
----
-
-# [20261102](./202611/20261102.md)
-## 📌 今日概况
-
-今日共检索候选论文 26 篇；关键词+LLM 智能匹配遥感交叉论文 10 篇；最终纳入日报 10 篇。
-
-今日论文聚焦多源遥感分类与跨模态融合，多篇工作围绕特征协同与频域注意力展开；视觉-语言模型向地球观测决策与地理文本定位延伸，强调工具增强与校准；测试时训练、扩散模型及类增量学习被用于高光谱分类、水下图像恢复与语义变化检测，域泛化与低层融合-高层理解衔接亦受关注。
-
-## ✨ 今日亮点
-
-- 多源遥感分类密集出现，共享模式与跨层频域融合成为主流思路。
-- 视觉-语言模型向地球观测决策与阿拉伯地理文本定位拓展。
-- 测试时训练与扩散模型分别用于高光谱分类和水下图像恢复。
-
-## 🗂 今日文章列表
-
-| 标题 | 作者 | 单位 | 一句话概括 | Issue |
-|---|---|---|---|---|
-| [20261102] Spectral-spatial vision test-time training for hyperspectral image classification | Zhao Xiang | College of Mathematical Sciences, Harbin Engineering University | 提出光谱-空间视觉测试时训练方法，用于高光谱图像分类。 | [#25](https://github.com/123trump/RS-PaperClaw/issues/25) |
-| [20261102] Performance evaluation of super-resolution techniques for characterization and phenotyping of commodity crops using multispectral imagery | Karukayil Abhiram, João F. C. Mota, Vásquez-Guevara Mateo, Arevalo-Ramirez Tito, Fernando Auat Cheein | School of Engineering and Physical Sciences, Heriot-Watt University, Edinburgh, UK；Department of Electrical Engineering, Department of Mechanical Engineering and Metallurgy, School of Engineering, Faculty of；School of Mathematical and Computer Sciences, Heriot-Watt University, Edinburgh, UK；Harper Adams University, England, UK | 评估超分辨率技术对多光谱作物表型表征的性能影响。 | [#26](https://github.com/123trump/RS-PaperClaw/issues/26) |
-| [20261102] Bridging Low-Level Image Fusion and High-Level Semantic Understanding | Dong Guangyuan, Shen Lingdong, Zhang Xudong, Jing Haodong, Wang Haoyu, Li Zihao, Ying Zonghao, Song Ziyu, Liu Shenghao, Luo Jiachen, Zhang Hao | Peking University；Xi'an Jiaotong University；Nankai University；Institute of Automation, Chinese Academy of Sciences | 衔接低层图像融合与高层语义理解，引入视觉-语言模型。 | [#27](https://github.com/123trump/RS-PaperClaw/issues/27) |
-| [20261102] Shared-Pattern Collaborative Network for Multi-Source Remote Sensing Data Classification | Yang Chenfang, Gong Chuanzheng, Gao Feng, Dong Junyu, Du Qian | State Key Laboratory of Physical Oceanography, Ocean University of China, Qingdao, China. (；Department of Electrical and Computer Engineering, Mississippi State University, Starkville, MS USA | 构建共享模式协同网络，实现多源遥感数据分类。 | [#28](https://github.com/123trump/RS-PaperClaw/issues/28) |
-| [20261102] Cross-Layer Refinement and Frequency-aware Fusion Network for Multi-Source Remote Sensing Image Classification | Xiao Wenhan, Gong Chuanzheng, Gao Feng, Dong Junyu, Du Qian | State Key Laboratory of Physical Oceanography, Ocean University of China, Qingdao, China；Department of Electrical and Computer Engineering, Mississippi State University, Starkville, MS USA. and elevation information [4] | 提出跨层细化与频率感知融合网络用于多源遥感分类。 | [#29](https://github.com/123trump/RS-PaperClaw/issues/29) |
-| [20261102] KAUSTics-Net: Diffusion-Based Through-Water UAV Restoration with a Semi-Synthetic Dataset | Scilla Dario, Omar A. Lopez, Johansen Kasper, Brian O. Nieuwenhuis, Matthew F. McCabe | and Livability Initiative, King Abdullah University of Science and Technology；Red Sea Research Center, Biological and Environmental Science and；Engineering Division, King Abdullah University of Science and Technology | 基于扩散模型与半合成数据集恢复穿水无人机图像。 | [#30](https://github.com/123trump/RS-PaperClaw/issues/30) |
-| [20261102] HyperFlow: Class-Incremental Semantic Change Detection via Hyperbolic Flow | Béchaz Manon, Buecher Léo, Dalsasso Emanuele, Tomoiaga Ciprian, Jayet Patrick, Detyniecki Marcin, Chapel Laetitia, Drumetz Lucas, Courty Nicolas, Tuia Devis | University of the Witwatersrand；Université de Bretagne Sud, France；Institut Agro Rennes-Angers, France；Lab-STICC | 利用双曲流实现类增量语义变化检测。 | [#31](https://github.com/123trump/RS-PaperClaw/issues/31) |
-| [20261102] ArabGeoText: Tool-Augmented Vision-Language Models for Arabic Geospatial Text Spotting | Bazi Yakoub, Alsaleh Sarah, Mohamad M. Al Rahhal, Mohamed A. Mekhtiche, Zuair Mansour | the Computer Engineering Department, College of Computer and Information Sciences, King Saud University, Riyadh, Saudi Arabia (；the Applied Computer Science Department, College of Applied Computer Science, King Saud University, Riyadh, Saudi Arabia ( | 构建工具增强视觉-语言模型用于阿拉伯地理文本定位。 | [#32](https://github.com/123trump/RS-PaperClaw/issues/32) |
-| [20261102] EO-Jev: Decision Model for Earth Observation | Mohamed Atef Abouelhadid, Diaa Addeen Abuhani, Muhammad Akhtar Munir, Fahad Shahbaz Khan, Khan Salman | Mohamed Bin Zayed University of Artificial Intelligence；Massachusetts Institute of Technology；Australian National University；Linköping University Sweden | 提出面向地球观测的决策模型，关注校准与低秩微调。 | [#33](https://github.com/123trump/RS-PaperClaw/issues/33) |
-| [20261102] ASCoR: Asymmetric Semantic-Spatial Learning for Remote Sensing Domain Generalization | Wang Zitong, Lyu Shuchang, Li Meng, Wang Qiang, Cheng Guangliang, Shi Zhenwei | Beihang University；University of Science and Technology Beijing；University of Liverpool；Guangdong Electronic Information Engineering Research Institute, University of Electronic Science and Technology of China | 采用非对称语义-空间学习提升遥感域泛化分割性能。 | [#34](https://github.com/123trump/RS-PaperClaw/issues/34) |
-
-## 🔎 观察
-
-- 多源融合研究从简单拼接转向共享模式与频域协同，强调跨模态特征对齐。
-- 视觉-语言模型在遥感中从描述生成走向决策与文本定位，工具增强成新方向。
-
----
-
-Powered by OpenClaw🦞
-
-<!-- rs-pipeline: {"date": "20261102", "source": "oai", "checked_at": "2026-11-04T07:35:09+00:00", "source_complete": true, "candidate_count": 26, "paper_count": 10} -->
 
 ---
