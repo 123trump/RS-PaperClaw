@@ -2,6 +2,36 @@
 
 最近三天日报（最新在前）：
 
+# [20261104](./202611/20261104.md)
+## 📌 今日概况
+
+今日共检索候选论文 14 篇；关键词+LLM 智能匹配遥感交叉论文 5 篇；最终纳入日报 5 篇。
+
+今日论文总体呈现出遥感与AI交叉深化趋势。
+
+## 🗂 今日文章列表
+
+| 标题 | 作者 | 单位 | 一句话概括 | Issue |
+|---|---|---|---|---|
+| [20261104] Benchmarking Fine-Grained Visual Reasoning for Remote Sensing in Urban Management | Zhang Jiawei, Cai Rizhao, Guan Dayan | School of Electronics and Information Engineering, Harbin Institute of Technology | 聚焦Remote Sensing、Fine-Grained Visual Reasoning，给出可复现的模型与评测方案。 | [#45](https://github.com/123trump/RS-PaperClaw/issues/45) |
+| [20261104] TOP: Transmission-Oriented Remote Sensing Pansharpening | Cao Zi-Han, Liang Jing-Ze, Wu Shao-Jie, Di Jin-Cheng, Deng Liang-Jian, Vivone Gemine | University of Electronic Science and Technology of China, Chengdu, Sichuan, China (；University of Electronic Science and Technology of China, Chengdu, Sichuan, China；the Multi-Hazard Early Warning Key Laboratory of Sichuan Province, Chengdu, Sichuan, China (；the National Research Council of Italy, Institute of Integrated Methodologies for Earth Observation (CNR-IMIOT), Tito, Italy ( | 聚焦Remote Sensing、Pansharpening，给出可复现的模型与评测方案。 | [#46](https://github.com/123trump/RS-PaperClaw/issues/46) |
+| [20261104] CAPE-JEPA - Cross-modal Adversarial Probabilistic Embedding JEPA | Junghare Aniket, Banerjee Biplab | Biplab Banerjee；Indian Institute of Technology Bombay | 聚焦Remote Sensing、Cross-Modal Retrieval，给出可复现的模型与评测方案。 | [#47](https://github.com/123trump/RS-PaperClaw/issues/47) |
+| [20261104] Generative AI for urban planning: synthesizing land-use maps with satellite imagery via DualControlNet | Song Qingqi, Chen Yuzhou, Hu Lingqian, Wang Shenhao | Department of Urban and Regional Planning, University of Florida；College of Architecture, Texas A&M University | 聚焦Satellite Imagery、Generative AI，给出可复现的模型与评测方案。 | [#48](https://github.com/123trump/RS-PaperClaw/issues/48) |
+| [20261104] ReTailor: A Residual Feature Tailoring Framework for Real-Time Cross-Sensor Pansharpening Adaptation | Liang Jing-Ze, Xiao Wei-Jie, Cao Zi-Han, Li Yang-Dong, Hu Tian-Yi, Deng Liang-Jian | University of Electronic Science and Technology of China；Multi-Hazard Early Warning Key Laboratory of Sichuan Province | 聚焦Self-Supervised Learning、Pansharpening，给出可复现的模型与评测方案。 | [#49](https://github.com/123trump/RS-PaperClaw/issues/49) |
+
+## 🔎 观察
+
+- 基础模型与遥感任务结合持续增强，评测与推理能力成为关键。
+- 多数工作关注算法有效性与泛化，而非硬件实现。
+
+---
+
+Powered by OpenClaw🦞
+
+<!-- rs-pipeline: {"date": "20261104", "source": "oai", "checked_at": "2026-11-06T12:42:07+00:00", "source_complete": true, "candidate_count": 14, "paper_count": 5} -->
+
+---
+
 # [20261103](./202611/20261103.md)
 ## 📌 今日概况
 
@@ -77,39 +107,5 @@ Powered by OpenClaw🦞
 Powered by OpenClaw🦞
 
 <!-- rs-pipeline: {"date": "20261102", "source": "oai", "checked_at": "2026-11-04T07:35:09+00:00", "source_complete": true, "candidate_count": 26, "paper_count": 10} -->
-
----
-
-# [20261101](./202611/20261101.md)
-## 📌 今日概况
-
-今日共检索候选论文 10 篇；关键词+LLM 智能匹配遥感交叉论文 3 篇；最终纳入日报 3 篇。
-
-今日研究聚焦遥感基础模型与多模态推理。SpecUltra提出统一基础模型处理异构光谱图像，通过3D卷积令牌化实现跨模态统一；EarthJev针对Sentinel-2土地覆盖自然语言问答，采用校准的非生成式方法提升答案可靠性；第三篇将地表变化预测移至嵌入空间，利用基础模型时序特征进行预报。三篇工作均强调模型泛化与可解释性，反映遥感AI从单一任务向统一框架与语言交互演进的趋势。
-
-## ✨ 今日亮点
-
-- SpecUltra统一异构光谱图像基础模型，3D卷积令牌化实现跨模态处理。
-- EarthJev用非生成式校准方法回答Sentinel-2土地覆盖自然语言问题。
-- 地表变化预测新范式：在基础模型嵌入空间进行时序预报。
-
-## 🗂 今日文章列表
-
-| 标题 | 作者 | 单位 | 一句话概括 | Issue |
-|---|---|---|---|---|
-| [20261101] SpecUltra: A Unified Foundation Model for Heterogeneous Spectral Images | Kong Weili, Liu Baisen, Bi Xiaojun, Pei Jiaming | School of Information and Communication Engineering, Harbin Engineering University, Harbin 150001, China；School of Electronic and Information Engineering, Heilongjiang Institute of Technology, Harbin 150050, China；School of Information Engineering, Minzu University of China, Beijing 100081, China；School of Computer Science, The University of Sydney, Sydney, NSW 2006, Australia | 提出SpecUltra统一基础模型，用3D卷积令牌化处理高光谱与多光谱等异构光谱图像。 | [#21](https://github.com/123trump/RS-PaperClaw/issues/21) |
-| [20261101] EarthJev: Calibrated, Non-Generative Answers to Natural-Language Questions about Sentinel-2 Land Cover | Benfenati Domenico, Antonio Maria Rinaldi, Tommasino Cristian | Department of Electrical Engineering and Information Technology (DIETI), University of Naples Federico II, Via Claudio, 21, Naples, 80125, Italy | EarthJev对Sentinel-2土地覆盖自然语言问答给出校准、非生成式答案，提升可靠性。 | [#22](https://github.com/123trump/RS-PaperClaw/issues/22) |
-| [20261101] Forecasting Earth Surface Change in Embedding Space | Li Jingtao, Jaffer Sadiq, Madhavapeddy Anil, Sousa Pedro, Ortiz Anthony, Gao Kyle, Feng Zhengpeng, Zhong Yanfei, White Kevin, Keshav Srinivasan | Department of Computer Science, University of Cambridge；Microsoft AI for Good Research Lab；Aalto University；Wuhan University | 将地表变化预测转化为嵌入空间时序预报，利用基础模型特征进行未来状态推断。 | [#23](https://github.com/123trump/RS-PaperClaw/issues/23) |
-
-## 🔎 观察
-
-- 三篇工作均围绕基础模型展开，显示遥感AI正从任务专用模型转向统一表征与跨模态适配。
-- 非生成式问答与嵌入空间预测强调可解释与校准，反映对模型可信度的关注上升。
-
----
-
-Powered by OpenClaw🦞
-
-<!-- rs-pipeline: {"date": "20261101", "source": "oai", "checked_at": "2026-11-04T07:32:53+00:00", "source_complete": true, "candidate_count": 10, "paper_count": 3} -->
 
 ---
