@@ -30,6 +30,17 @@ def history(date="Wed, 23 Sep 2026 10:00:00 GMT", identifier="2609.12345", token
 
 
 class OaiTest(unittest.TestCase):
+    @patch.object(arxiv_oai.time, "sleep")
+    @patch.object(arxiv_oai.subprocess, "run")
+    @patch.object(arxiv_oai.urllib.request, "urlopen")
+    def test_exhausted_timeouts_are_identifiable_transport_failures(self, urlopen, run, sleep):
+        urlopen.side_effect = TimeoutError("read timed out")
+        run.return_value = SimpleNamespace(returncode=28, stdout=b"\nRS_HTTP_STATUS:000", stderr=b"timed out")
+        with self.assertRaisesRegex(arxiv_oai.OaiTransportError, "timed out"):
+            arxiv_oai._fetch({"verb": "ListRecords"})
+        self.assertEqual(urlopen.call_count, 3)
+        self.assertEqual(run.call_count, 1)
+
     @patch.object(arxiv_oai.subprocess, "run")
     @patch.object(arxiv_oai.urllib.request, "urlopen")
     def test_406_uses_compressed_curl_and_removes_status_marker(self, urlopen, run):

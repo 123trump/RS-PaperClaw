@@ -1,4 +1,5 @@
 from pathlib import Path
+from datetime import datetime, timedelta
 import io
 import sys
 import unittest
@@ -11,9 +12,55 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 
 from clients import arxiv_client
+from clients.arxiv_oai import OaiTransportError
 
 
 class ArxivClientTest(unittest.TestCase):
+    @patch.object(arxiv_client, "fetch_query_with_fallback")
+    @patch("clients.arxiv_oai.harvest_since", side_effect=OaiTransportError("timed out"))
+    def test_oai_timeout_falls_back_to_date_scoped_api(self, harvest, fetch):
+        day = datetime.now().date() - timedelta(days=2)
+        old_day = day - timedelta(days=1)
+        target = day.strftime("%Y%m%d")
+        fetch.return_value = f'''<feed xmlns="http://www.w3.org/2005/Atom"
+            xmlns:o="http://a9.com/-/spec/opensearch/1.1/">
+            <o:totalResults>2</o:totalResults>
+            <entry><id>https://arxiv.org/abs/2611.00001v1</id>
+            <title>Satellite image time series</title><summary>Remote sensing with AI</summary>
+            <published>{day}T10:00:00Z</published></entry>
+            <entry><id>https://arxiv.org/abs/2611.00002v2</id>
+            <title>Remote sensing</title><summary>Satellite segmentation</summary>
+            <published>{old_day}T10:00:00Z</published><updated>{day}T10:00:00Z</updated></entry>
+            </feed>'''
+        with patch.dict("os.environ", {"ARXIV_SOURCE": "oai"}):
+            items = arxiv_client.fetch_recent_candidates(target_date=target)
+        self.assertEqual([item["arxiv_id"] for item in items], ["2611.00001v1"])
+        self.assertIn(f"submittedDate:[{target}0000 TO {target}2359]", fetch.call_args.args[0]["search_query"])
+
+    @patch.object(arxiv_client, "fetch_query_with_fallback")
+    @patch("clients.arxiv_oai.harvest_since")
+    def test_oai_rate_limit_or_invalid_harvest_does_not_switch_sources(self, harvest, fetch):
+        for error in (HTTPError("url", 429, "rate limited", {}, None),
+                      HTTPError("url", 503, "unavailable", {}, None),
+                      RuntimeError("Missing original submission date")):
+            with self.subTest(error=error), patch.dict("os.environ", {"ARXIV_SOURCE": "oai"}):
+                harvest.side_effect = error
+                with self.assertRaises(arxiv_client.ArxivUnavailableError):
+                    arxiv_client.fetch_recent_candidates(target_date=datetime.now().strftime("%Y%m%d"))
+        fetch.assert_not_called()
+
+    @patch.object(arxiv_client, "fetch_query_with_fallback")
+    @patch("clients.arxiv_oai.harvest_since", side_effect=OaiTransportError("timed out"))
+    def test_unavailable_or_incomplete_api_fallback_is_not_an_empty_day(self, harvest, fetch):
+        for response in (arxiv_client.ArxivUnavailableError("API unavailable"),
+                         '<feed xmlns="http://www.w3.org/2005/Atom" '
+                         'xmlns:o="http://a9.com/-/spec/opensearch/1.1/">'
+                         '<o:totalResults>1</o:totalResults></feed>'):
+            with self.subTest(response=response), patch.dict("os.environ", {"ARXIV_SOURCE": "oai"}):
+                fetch.side_effect = [response]
+                with self.assertRaises(arxiv_client.ArxivUnavailableError):
+                    arxiv_client.fetch_recent_candidates(target_date=datetime.now().strftime("%Y%m%d"))
+
     @patch.object(arxiv_client.subprocess, "run", return_value=SimpleNamespace(returncode=1))
     @patch.object(arxiv_client.urllib.request, "urlopen")
     def test_pdf_mirrors_returning_html_are_rejected(self, urlopen, run):

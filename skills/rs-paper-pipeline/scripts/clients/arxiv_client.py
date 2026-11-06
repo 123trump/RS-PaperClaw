@@ -189,7 +189,7 @@ def fetch_recent_candidates(
     # budget. The date-scoped query API is bounded for historical recovery.
     historical = target_date and (datetime.now().date() - datetime.strptime(target_date, "%Y%m%d").date()).days > 14
     if os.environ.get("ARXIV_SOURCE", "api") == "oai" and not historical:
-        from clients.arxiv_oai import harvest_since
+        from clients.arxiv_oai import OaiTransportError, harvest_since
         if target_date:
             days = {datetime.strptime(target_date, "%Y%m%d").date()}
         else:
@@ -197,6 +197,11 @@ def fetch_recent_candidates(
         try:
             items = harvest_since(min(days).isoformat(), has_remote_sensing_signal)
             return [item for item in items if item["published"] in {day.isoformat() for day in days}]
+        except OaiTransportError as exc:
+            # Retry through the official query API only after transport failure.
+            # Rate limits and malformed/incomplete harvests remain hard failures.
+            # The query path below checks original dates and complete pagination.
+            print(f"  [arXiv] OAI transport unavailable ({exc}); fallback to query API", flush=True)
         except Exception as exc:
             raise ArxivUnavailableError(f"OAI metadata unavailable: {exc}") from exc
     query_parts = []

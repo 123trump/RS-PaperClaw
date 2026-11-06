@@ -24,6 +24,10 @@ NS = {"o": "http://www.openarchives.org/OAI/2.0/", "a": "http://arxiv.org/OAI/ar
       "r": "http://arxiv.org/OAI/arXivRaw/"}
 
 
+class OaiTransportError(RuntimeError):
+    """OAI connection retries failed; a separate metadata API may still work."""
+
+
 def parse_original_dates(xml):
     root = ET.fromstring(xml)
     error = root.find("o:error", NS)
@@ -114,8 +118,8 @@ def _fetch(params):
                 if result.returncode != 0 and attempt < 2:
                     time.sleep(10 * (attempt + 1))
                     continue
-                raise RuntimeError(f"OAI curl failed: HTTP {status.decode(errors='replace').strip()}; "
-                                   f"{result.stderr.decode(errors='replace')[:200]}") from exc
+                raise OaiTransportError(f"OAI curl failed: HTTP {status.decode(errors='replace').strip()}; "
+                                        f"{result.stderr.decode(errors='replace')[:200]}") from exc
             time.sleep(10 * (attempt + 1))
 
 
